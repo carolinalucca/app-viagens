@@ -58,13 +58,29 @@
 			children = (
 				22B600D924520A8300244F13 /* AppDelegate.swift */,
 				22B600DB24520A8300244F13 /* SceneDelegate.swift */,
-				22B600DD24520A8300244F13 /* ViewController.swift */,
-				22B600DF24520A8300244F13 /* Main.storyboard */,
+				22B600EE2452371000244F13 /* View */,
+				22B600ED2452370500244F13 /* Controller */,
 				22B600E224520A8600244F13 /* Assets.xcassets */,
 				22B600E424520A8600244F13 /* LaunchScreen.storyboard */,
 				22B600E724520A8600244F13 /* Info.plist */,
 			);
 			path = "App Viagens";
+			sourceTree = "<group>";
+		};
+		22B600ED2452370500244F13 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22B600DD24520A8300244F13 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		22B600EE2452371000244F13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22B600DF24520A8300244F13 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
