@@ -13,16 +13,20 @@ class ViewController: UIViewController, UITableViewDataSource {
     // MARK: - IBOutlets
     
     @IBOutlet weak var tabelaViagens: UITableView! //Referencia a table view das viagens
+    @IBOutlet weak var viewHoteis: UIView!
+    @IBOutlet weak var viewPacotes: UIView!
     
     // MARK: - Atributos
     
-    let listaViagens: Array<String> = ["Rio de Janeiro", "Belo Horizonte", "Salvador"]
-
+    let listaViagens: Array<Viagem> = ViagemDAO().retornaTodasAsViagens()
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabelaViagens.dataSource = self // Avisa a tabela que esse controller é o responsável
+        self.viewHoteis.layer.cornerRadius = 10
+        self.viewPacotes.layer.cornerRadius = 10
     }
     
     // MARK: - UITableViewDataSource
@@ -32,9 +36,13 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celula = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) // Busca a celula pelo identificador
-        celula.textLabel?.text = listaViagens[indexPath.row] // Adiciona o conteudo da lista na celula de acordo com a posiçao no array
-        return celula
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+
+        let viagemAtual = listaViagens[indexPath.row]
+
+        cell.textLabel?.text = viagemAtual.titulo
+
+        return cell
     }
 
 
